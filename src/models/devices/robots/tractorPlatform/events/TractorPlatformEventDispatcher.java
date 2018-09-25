@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import models.devices.DeviceBase;
 import models.devices.DeviceType;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 import ru.roboticsnt.events.Event;
 import ru.roboticsnt.events.EventListener;
 import ru.roboticsnt.events.IEventDispatcher;
@@ -16,7 +16,7 @@ public class TractorPlatformEventDispatcher extends DeviceBase implements IEvent
 	private ArrayList<EventListener> _listenersList = new ArrayList<>();
 	
 	
-	public TractorPlatformEventDispatcher(ProtocolConnnectionBase connection, DeviceType type)
+	public TractorPlatformEventDispatcher(ProtocolConnectionBase connection, DeviceType type)
 	{
 		super(connection, type);
 	}

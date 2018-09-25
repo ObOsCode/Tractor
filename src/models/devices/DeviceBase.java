@@ -1,16 +1,16 @@
 package models.devices;
 
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 
 public abstract class DeviceBase
 {
 
 	private DeviceType _deviceType;
 	
-	private ProtocolConnnectionBase _connection;
+	private ProtocolConnectionBase _connection;
 	
 	
-	public DeviceBase(ProtocolConnnectionBase connection, DeviceType type)
+	public DeviceBase(ProtocolConnectionBase connection, DeviceType type)
 	{
 		_connection = connection;
 		_deviceType = type;
@@ -29,7 +29,7 @@ public abstract class DeviceBase
 	}
 	
 	
-	public ProtocolConnnectionBase getConnection()
+	public ProtocolConnectionBase getConnection()
 	{
 		return _connection;
 	}

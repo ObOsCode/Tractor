@@ -27,7 +27,7 @@ import models.MainModel;
 import models.devices.DeviceBase;
 import models.devices.DeviceType;
 import models.events.MainModelListener;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 
 public class DeviceListPanel extends JPanel
 {
@@ -37,7 +37,7 @@ public class DeviceListPanel extends JPanel
 
 	private static final long serialVersionUID = 2137093251701873056L;
 	
-	private JComboBox<ProtocolConnnectionBase> _selectConnectionComBox;
+	private JComboBox<ProtocolConnectionBase> _selectConnectionComBox;
 	private JComboBox<DeviceType> _selectDeviceTypeComBox;
 	private JButton _addDeviceBut;
 	private JButton _removeDeviceBut;
@@ -93,7 +93,7 @@ public class DeviceListPanel extends JPanel
 		gbc_lblNewLabel_1.gridy = 0;
 		addDeviceFormPanel.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		_selectConnectionComBox = new JComboBox<ProtocolConnnectionBase>();
+		_selectConnectionComBox = new JComboBox<ProtocolConnectionBase>();
 		_selectConnectionComBox.setPreferredSize(new Dimension(120, 24));
 		_selectConnectionComBox.setMinimumSize(new Dimension(100, 24));
 		GridBagConstraints gbc_selectPortComBox = new GridBagConstraints();
@@ -221,9 +221,9 @@ public class DeviceListPanel extends JPanel
 	}
 	
 	
-	public ProtocolConnnectionBase getSelectedConnection()
+	public ProtocolConnectionBase getSelectedConnection()
 	{
-		return (ProtocolConnnectionBase) _selectConnectionComBox.getSelectedItem();
+		return (ProtocolConnectionBase) _selectConnectionComBox.getSelectedItem();
 	}
 	
 	
@@ -270,7 +270,7 @@ public class DeviceListPanel extends JPanel
 			
 			_selectConnectionComBox.removeAllItems();
 			
-			ArrayList<ProtocolConnnectionBase> connectionsList = _model.getConnectionsList();
+			ArrayList<ProtocolConnectionBase> connectionsList = _model.getConnectionsList();
 			
 			if(connectionsList.isEmpty())
 			{
@@ -282,7 +282,7 @@ public class DeviceListPanel extends JPanel
 			_addDeviceBut.setEnabled(true);
 			_selectConnectionComBox.setEnabled(true);
 			
-			for (ProtocolConnnectionBase connection : connectionsList)
+			for (ProtocolConnectionBase connection : connectionsList)
 			{
 				_selectConnectionComBox.addItem(connection);
 			}

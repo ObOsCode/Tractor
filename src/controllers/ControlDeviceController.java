@@ -5,15 +5,15 @@ import models.devices.robots.tractorPlatform.TractorPlatform;
 import models.events.MainModelListener;
 import ru.roboticsnt.commandProtocol.ProtocolCommand;
 import ru.roboticsnt.commandProtocol.commands.ControlDeviceCommand;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionListener;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
 
 public class ControlDeviceController extends AbstractController
 {
 	
 	private MainModel _model;
 	
-	private ProtocolConnnectionBase _deviceConnection;
+	private ProtocolConnectionBase _deviceConnection;
 
 	private ControlDeviceListener _controlDeviceCommandsListener;
 

@@ -20,8 +20,8 @@ import models.devices.controlDevices.ControlDevice;
 import models.devices.robots.DeltaRobot;
 import models.devices.robots.tractorPlatform.TractorPlatform;
 import ru.roboticsnt.commandProtocol.connections.ArduinoProtocolConnection;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionListener;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
 import ru.roboticsnt.commandProtocol.connections.SocketProtocolConnection;
 import ru.roboticsnt.serial.SerialPortManager;
 import ru.roboticsnt.socketServer.SocketServer;
@@ -57,7 +57,7 @@ public class DevicesListController extends AbstractController
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				ProtocolConnnectionBase selectedConnection = devicesPanel.getSelectedConnection();
+				ProtocolConnectionBase selectedConnection = devicesPanel.getSelectedConnection();
 
 				DeviceType selectedType = DeviceType.getByIndex(devicesPanel.getSelectedTypeIndex());
 				
@@ -231,7 +231,7 @@ public class DevicesListController extends AbstractController
 	}
 	
 	
-	private void addConnection(final ProtocolConnnectionBase connection)
+	private void addConnection(final ProtocolConnectionBase connection)
 	{
 		
 		connection.addEventListener(new ProtocolConnectionListener()

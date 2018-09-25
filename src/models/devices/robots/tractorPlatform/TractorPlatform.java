@@ -3,7 +3,7 @@ package models.devices.robots.tractorPlatform;
 import models.devices.DeviceType;
 import models.devices.robots.tractorPlatform.events.TractorPlatformEvent;
 import models.devices.robots.tractorPlatform.events.TractorPlatformEventDispatcher;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 
 
 public class TractorPlatform extends TractorPlatformEventDispatcher
@@ -31,7 +31,7 @@ public class TractorPlatform extends TractorPlatformEventDispatcher
 	private boolean _isTrackRecorded = false;
 	
 	
-	public TractorPlatform(ProtocolConnnectionBase connection)
+	public TractorPlatform(ProtocolConnectionBase connection)
 	{
 		super(connection, DeviceType.PLATFORM);
 	}

@@ -7,7 +7,7 @@ import models.devices.DeviceType;
 import models.devices.robots.tractorPlatform.PlatformTrack;
 import models.devices.robots.tractorPlatform.TractorPlatform;
 import models.events.MainModelEvent;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 import ru.roboticsnt.events.EventDispatcher;
 
 
@@ -15,7 +15,7 @@ public class MainModel extends EventDispatcher
 {
 	
 	private ArrayList<DeviceBase> _devicesList = new ArrayList<>();
-	private ArrayList<ProtocolConnnectionBase> _connectionsList = new ArrayList<>();
+	private ArrayList<ProtocolConnectionBase> _connectionsList = new ArrayList<>();
 	
 	private DeviceBase _selectedDevice = null;
 	private DeviceBase _controlDevice = null;
@@ -64,7 +64,7 @@ public class MainModel extends EventDispatcher
 	}
 	
 	
-	public ArrayList<ProtocolConnnectionBase> getConnectionsList()
+	public ArrayList<ProtocolConnectionBase> getConnectionsList()
 	{
 		return _connectionsList;
 	}
@@ -106,14 +106,14 @@ public class MainModel extends EventDispatcher
 	}
 	
 	
-	public void addConnection(ProtocolConnnectionBase connection)
+	public void addConnection(ProtocolConnectionBase connection)
 	{
 		_connectionsList.add(connection);
 		dispatchEvent(new MainModelEvent(MainModelEvent.CONNECTIONS_LIST_CHANGE));
 	}
 	
 	
-	public void removeConnection(ProtocolConnnectionBase connection)
+	public void removeConnection(ProtocolConnectionBase connection)
 	{
 	
 		if(_connectionsList.contains(connection))
@@ -141,7 +141,7 @@ public class MainModel extends EventDispatcher
 	public boolean isConnectionWithAdressExist(String connectionAdress)
 	{
 		
-		for (ProtocolConnnectionBase connection : _connectionsList)
+		for (ProtocolConnectionBase connection : _connectionsList)
 		{
 			if(connection.getAdress().equals(connectionAdress))
 			{
@@ -152,7 +152,7 @@ public class MainModel extends EventDispatcher
 		
 		for (DeviceBase device : _devicesList)
 		{
-			ProtocolConnnectionBase connection = device.getConnection();
+			ProtocolConnectionBase connection = device.getConnection();
 			
 			if(connection.getAdress().equals(connectionAdress))
 			{

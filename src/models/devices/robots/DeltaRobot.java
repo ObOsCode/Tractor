@@ -2,12 +2,12 @@ package models.devices.robots;
 
 import models.devices.DeviceBase;
 import models.devices.DeviceType;
-import ru.roboticsnt.commandProtocol.connections.ProtocolConnnectionBase;
+import ru.roboticsnt.commandProtocol.connections.ProtocolConnectionBase;
 
 public class DeltaRobot extends DeviceBase
 {
 
-	public DeltaRobot(ProtocolConnnectionBase connection)
+	public DeltaRobot(ProtocolConnectionBase connection)
 	{
 		super(connection, DeviceType.DELTA);
 	}
